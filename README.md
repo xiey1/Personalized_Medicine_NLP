@@ -136,3 +136,25 @@ Here I use n_components=25 to perform dimension reduction for `Gene` and `Variat
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_barplot.png' width=500px>
 
 Word2Vec model with gene variation information performs slightly better, with overall validation accuracy around 0.51 for LogisticRegression(C=0.001)
+
+<a id='PartVII_link'></a>
+## Part VII: Doc2Vec + Machine Learning models
+**Doc2Vec** is applied to train an embedding matrix in which each document is represented by a numeric vector with a fixed dimension containing its semantic meaning. The obtained matrix can be concatenated with the transformed matrix containing information about `Gene` and `Variation`. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the matrix either only containing text information or both text and gene variation data.
+
+* Classification result and evaluation:
+Here I use `vector_size=100` and each document is represented by a numeric vector with 100 dimensions. Negative sampling is used in model training and 5 noise words will be drawn. I use n_components=25 to perform dimension reduction for `Gene` and `Variation` information. The combined matrix containing information about both text and gene variation has a dimension of 150.
+  **Doc2Vec + StandardScaler + LogisticRegression(C=0.002)** achieves the highest accuracy score of 0.47.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Doc2Vec_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Doc2Vec_barplot.png' width=500px>
+
+Doc2Vec model with gene variation information does not perform better than Word2vec model, with overall validation accuracy around 0.47 for LogisticRegression(C=0.002).
+
+<a id='PartVIII_link'></a>
+## Part VIII: Deep Learning models with pre-trained Word2Vec
+Pre-trained word vectors are used as embedding matrix to convert each word to a numeric vector. However, 120609/120304 out of 175038 words cannot be found in the pre-trained word vectors, which may affect training performance.
+
+* Classification result and evaluation:
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP_barplot.png' width=500px>
+
+With pre-trained Word2Vec as embedding matrix, 5 different RNN architectures have been tested for this project and the overall training performance is better than machine learning models. All the trained RNN models can achieve accuracy above 0.6. The RNN2 model can achieve the highest accuracy score around 0.70. However, 120609/120304 out of 175038 words cannot be converted using pre-trained Word2Vec models.
