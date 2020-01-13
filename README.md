@@ -158,3 +158,15 @@ Pre-trained word vectors are used as embedding matrix to convert each word to a 
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP_barplot.png' width=500px>
 
 With pre-trained Word2Vec as embedding matrix, 5 different RNN architectures have been tested for this project and the overall training performance is better than machine learning models. All the trained RNN models can achieve accuracy above 0.6. The RNN2 model can achieve the highest accuracy score around 0.70. However, 120609/120304 out of 175038 words cannot be converted using pre-trained Word2Vec models.
+
+<a id='PartIX_link'></a>
+## Part IX: Deep Learning models with self-trained Word2Vec
+Since this project contains some words commonly used in academic literature and may not be included in common communication, I will next train a Word2Vec model using data from this project.
+<br>Instead of using pre-trained word vectors, we can train Word2Vec using the current dataset. Using self-trained Word2Vec, only 28438 out of 175038 words cannot be found in the self-trained word vectors
+
+* Classification result and evaluation:
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP2_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP2_barplot.png' width=500px>
+
+With self-trained Word2Vec as embedding matrix, 5 different RNN architectures have been tested for this project and the overall training performance is better than machine learning models, but not as good as using pre-trained Word2Vec. All the trained RNN models can achieve accuracy around 0.6 and the RNN1 model can achieve the highest accuracy score around 0.68.
+
