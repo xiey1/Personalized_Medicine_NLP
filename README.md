@@ -103,3 +103,15 @@ Consistent with the previous EDA result, the majority of misclassified `Class2` 
 
 1. The overall training performance for LSA method is not better than BOW using CountVectorizer and TfidfVectorizer, with overall validation accuracy around 0.40. 
 2. Larger n_components value in TruncatedSVD leads to increased bias and overfitting. Generally n_components=25 or 50 achieves better performance.
+
+<a id='PartV_link'></a>
+## Part V: Latent Semantic Analysis + `Gene` and `Variation` information
+One-hot-encoding and Truncated singular value decomposition (SVD) is applied to transform Gene and Variation data. The obtained matrix is concatenated with the output of LSA. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the combined matrix containing information about both text and gene variation.
+
+* Classification result and evaluation:
+Here I use n_components=50 to perform LSA and use n_components=25 to perform dimension reduction for `Gene` and `Variation` information. The combined matrix containing information about both text and gene variation has a dimension of 100.
+  **TruncatedSVD(n_components=50) + StandardScaler + LogisticRegression(C=0.0002)** achieves the highest accuracy score of 0.43.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/LSA2_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/LSA2_barplot.png' width=500px>
+
+The overall training performance for LSA method with gene variation information is not better than LSA or BOW method, with overall validation accuracy around 0.40.
