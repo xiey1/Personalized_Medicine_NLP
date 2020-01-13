@@ -65,4 +65,6 @@ There are 9 classes of genetic mutations in this project and the distribution of
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/keywords_perclass.png' width=600px>
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/WordCloud_perclass.png' width=600px>
 
+Again, `Class2` and `Class7` have similar keywords with enrichment of `EGFR` mutations and `patient` as keyword. Both `Class2` and `Class7` are also highly enriched with `KIT` and `BRAF` mutations based on the mutant gene profiling. `Class5` and `Class6` are characterized by `BRCA1` mutations. `Class8` and `Class9` are both very small datasets and enriched with `IDH1` and `IDH2` mutations.
 
+It is not clear the criterion that mutations are classified in this project. Based on the exploratory data analysis, genetic profiling plays an important role in classification.
