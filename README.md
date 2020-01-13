@@ -28,8 +28,8 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 * [Part I: Exploratory data analysis](#PartI_link)
 * [Part II: CountVectorizer + Machine Learning models](#PartII_link)
 * [Part III: TfidfVectorizer + Machine Learning models](#PartIII_link)
-* [Part IV: Latent Semantic Analysis (LSA)](#PartIV_link)
-* [Part V: Latent Semantic Analysis (LSA) + `Gene` and `Variation` information](#PartV_link)
+* [Part IV: Latent Semantic Analysis](#PartIV_link)
+* [Part V: Latent Semantic Analysis + `Gene` and `Variation` information](#PartV_link)
 * [Part VI: Word2Vec + Machine Learning models](#PartVI_link)
 * [Part VII: Doc2Vec + Machine Learning models](#PartVII_link)
 * [Part VIII: Deep Learning models with pre-trained Word2Vec](#PartVIII_link)
@@ -71,7 +71,7 @@ It is not clear the criterion that mutations are classified in this project. Bas
 
 <a id='PartII_link'></a>
 ## Part II: CountVectorizer + Machine Learning models
-CountVectorizer from sklearn is used to convert texts to a matrix of token counts. Machine learning models LogisticRegression, RandomForestClassifier and XGBClassifier will then be applied to the count representation (sparse matrix) of texts.
+**CountVectorizer** from sklearn is used to convert texts to a matrix of token counts. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the count representation (sparse matrix) of texts.
 * Total number of features in CountVectorizer: 157815
 * Classification result and evaluation: 
   **XGBClassifier(eta=0.05,max_depth=6,min_child_weight=10,gamma=0,colsample_bytree=0.6)** achieves the highest accuracy score of 0.48.
@@ -82,7 +82,7 @@ Consistent with the previous EDA result, the majority of misclassified `Class2` 
 
 <a id='PartIII_link'></a>
 ## Part III: TfidfVectorizer + Machine Learning models
-TfidfVectorizer from sklearn is used to convert texts to a matrix of token counts. Machine learning models LogisticRegression, RandomForestClassifier and XGBClassifier will then be applied to the count representation (sparse matrix) of texts.
+**TfidfVectorizer** from sklearn is used to convert texts to a matrix of token counts. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the count representation (sparse matrix) of texts.
 * Total number of features in TfidfVectorizer: 157815
 * Classification result and evaluation: 
   **XGBClassifier(eta=0.05,max_depth=6,min_child_weight=5,gamma=0.4,colsample_bytree=0.2)** achieves the highest accuracy score of 0.50.
@@ -91,3 +91,15 @@ TfidfVectorizer from sklearn is used to convert texts to a matrix of token count
 
 1. The overall training performance is comparable between **CountVectorizer** and **TfidfVectorizer**. 
 2. Again, consistent with the previous EDA result, the majority of misclassified `Class2` texts fall into `Class7`.
+
+<a id='PartIV_link'></a>
+## Part IV: Latent Semantic Analysis
+**Truncated singular value decomposition (SVD)** is applied to count matrix obtained from **CountVectorizer** or **TfidfVectorizer** to perform linear dimensionality reduction. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the matrix with reduced dimension.
+
+* Classification result and evaluation: 
+  **TruncatedSVD(n_components=50) + RandomForestClassifier(max_depth=10,min_samples_leaf=15)** achieves the highest accuracy score of 0.42.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/LSA_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/LSA_barplot.png' width=500px>
+
+1. The overall training performance for LSA method is not better than BOW using CountVectorizer and TfidfVectorizer, with overall validation accuracy around 0.40. 
+2. Larger n_components value in TruncatedSVD leads to increased bias and overfitting. Generally n_components=25 or 50 achieves better performance.
