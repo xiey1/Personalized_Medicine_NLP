@@ -55,3 +55,14 @@ There are 9 classes of genetic mutations in this project and the distribution of
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/word_sentence_length_violinplot.png' width=600px>
 
 `Class7-9` have similar distribution of the number of sentences and the number of words in each class. However, `Class8` and `Class9` have large variation in word/sentence length distribution, which may be due to the small sample size
+
+* The most frequently mutated genes for each class.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/gene_perclass.png' width=600px>
+
+`Class2` and `Class7` have similar most frequently mutated genes.
+
+* Keywords for each class.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/keywords_perclass.png' width=600px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/WordCloud_perclass.png' width=600px>
+
+
