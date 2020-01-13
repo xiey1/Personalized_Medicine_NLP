@@ -115,3 +115,24 @@ Here I use n_components=50 to perform LSA and use n_components=25 to perform dim
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/LSA2_barplot.png' width=500px>
 
 The overall training performance for LSA method with gene variation information is not better than LSA or BOW method, with overall validation accuracy around 0.40.
+
+<a id='PartVI_link'></a>
+## Part VI: Word2Vec + Machine Learning models
+**Word2Vec** is applied to train an embedding matrix in which each word is represented by a numeric vector with a fixed dimension containing its semantic meaning. The numeric vectors for words in each document are averaged to obtain a vecotr to represent each document. The obtained matrix can be concatenated with the transformed matrix containing information about `Gene` and `Variation`. Machine learning models **LogisticRegression**, **RandomForestClassifier** and **XGBClassifier** will then be applied to the matrix either only containing text information or both text and gene variation data.
+
+* Word2Vec result:
+Here I choose to use embedding size as 100. After conversion, each word will be represented by a numeric vector with dimension as 100. **t-SNE** (t-distributed Stochastic Neighbor Embedding) plot can then be applied to visualize the spatial distribution of numeric representations of the words with semantic meanings similar to `benign` and `malignant` in t-SNE plot.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne.png' width=500px>
+The Word2Vec embedding matrix can transform words to numeric vectors with specific semantic meanings in terms of tumor malignancy.
+
+We can also visualize the spatial distribution of text from each class using t-SNE plot.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne2.png' width=500px>
+We cannot observe distinct clusters using t-SNE plot, which suggests that machine learning models are needed to further classify each document.
+
+* Classification result and evaluation:
+Here I use n_components=25 to perform dimension reduction for `Gene` and `Variation` information. The combined matrix containing information about both text and gene variation has a dimension of 150 (100+25+25).
+  **Word2Vec + StandardScaler + LogisticRegression(C=0.001)** achieves the highest accuracy score of 0.51.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_barplot.png' width=500px>
+
+Word2Vec model with gene variation information performs slightly better, with overall validation accuracy around 0.51 for LogisticRegression(C=0.001)
