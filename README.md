@@ -49,3 +49,9 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/class_description.png' width=600px>
 
 There are 9 classes of genetic mutations in this project and the distribution of data is imbalanced. `Class7` and `Class4` account for almost 50% of the entire dataset, while `Class3`, `Class8` and `Class9` have very few descriptions. The imbalance in data distribution needs to be considered when we split datasets as well as train the classification model.
+
+* Distribution of the number of sentences and number of words in texts for each class.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/word_sentence_length_distplot.png' width=600px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/word_sentence_length_violinplot.png' width=600px>
+
+`Class7-9` have similar distribution of the number of sentences and the number of words in each class. However, `Class8` and `Class9` have large variation in word/sentence length distribution, which may be due to the small sample size
