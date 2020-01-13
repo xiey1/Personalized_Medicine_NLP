@@ -46,4 +46,4 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
   Number of documents in testing dataset: 5667
 
 * The training dataset is imbalanced and the number of images in each dataset and in each class is shown as below.
-<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/class_description.png' width=300px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/class_description.png' width=600px>
