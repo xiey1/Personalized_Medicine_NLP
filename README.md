@@ -47,3 +47,5 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 
 * The training dataset is imbalanced and the number of images in each dataset and in each class is shown as below.
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/class_description.png' width=600px>
+
+There are 9 classes of genetic mutations in this project and the distribution of data is imbalanced. `Class7` and `Class4` account for almost 50% of the entire dataset, while `Class3`, `Class8` and `Class9` have very few descriptions. The imbalance in data distribution needs to be considered when we split datasets as well as train the classification model.
