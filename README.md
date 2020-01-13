@@ -77,3 +77,16 @@ CountVectorizer from sklearn is used to convert texts to a matrix of token count
   **XGBClassifier(eta=0.05,max_depth=6,min_child_weight=10,gamma=0,colsample_bytree=0.6)** achieves the highest accuracy score of 0.48.
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/CountVectorizer_confusion_matrix.png' width=500px>
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/CountVectorizer_barplot.png' width=500px>
+
+Consistent with the previous EDA result, the majority of misclassified `Class2` texts fall into `Class7`.
+
+<a id='PartIII_link'></a>
+## Part III: TfidfVectorizer + Machine Learning models
+TfidfVectorizer from sklearn is used to convert texts to a matrix of token counts. Machine learning models LogisticRegression, RandomForestClassifier and XGBClassifier will then be applied to the count representation (sparse matrix) of texts.
+* Total number of features in TfidfVectorizer: 157815
+* Coclusion: 
+  **XGBClassifier(eta=0.05,max_depth=6,min_child_weight=5,gamma=0.4,colsample_bytree=0.2)** achieves the highest accuracy score of 0.50.
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/TfidfVectorizer_confusion_matrix.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/TfidfVectorizer_barplot.png' width=500px>
+
+Consistent with the previous EDA result, the majority of misclassified `Class2` texts fall into `Class7`.
