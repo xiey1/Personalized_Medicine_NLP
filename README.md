@@ -122,11 +122,11 @@ The overall training performance for LSA method with gene variation information 
 
 * Word2Vec result:
 Here I choose to use embedding size as 100. After conversion, each word will be represented by a numeric vector with dimension as 100. **t-SNE** (t-distributed Stochastic Neighbor Embedding) plot can then be applied to visualize the spatial distribution of numeric representations of the words with semantic meanings similar to `benign` and `malignant` in t-SNE plot.
-<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne.png' width=600px>
 <br>The Word2Vec embedding matrix can transform words to numeric vectors with specific semantic meanings in terms of tumor malignancy.
 
 We can also visualize the spatial distribution of text from each class using t-SNE plot.
-<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne2.png' width=500px>
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/Word2Vec_tsne2.png' width=600px>
 <br>We cannot observe distinct clusters using t-SNE plot, which suggests that machine learning models are needed to further classify each document.
 
 * Classification result and evaluation:
