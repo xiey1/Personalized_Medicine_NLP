@@ -187,5 +187,5 @@ Three max_len values are used for the fine-tuning process:
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/BioBERT_confusion_matrix.png' width=500px>
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/BioBERT_barplot.png' width=500px>
 
-The BioBERT model with pre-trained weights and fine-tuned using the current dataset can achieve the highest accuracy around 0.5994. The overall performance is not as good as LSTM models but the training process is much faster as training 2 epochs can achieve the optimal performance.
+The BioBERT model with pre-trained weights and fine-tuned using the current dataset can achieve the highest accuracy around 0.5994. The overall performance is better than machine learning models but not as good as LSTM models. The training process is much faster as training 2 epochs can achieve the optimal performance.
 
