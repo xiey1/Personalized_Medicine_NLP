@@ -22,6 +22,7 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
   Long short-term memory (LSTM)
   Gated Recurrent Units (GRU)
   Conv1d
+  BioBERT
 
 <br>This project has 9 sections with code and detailed explanation in 9 jupyter notebooks.
 
@@ -34,6 +35,7 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 * [Part VII: Doc2Vec + Machine Learning models](#PartVII_link)
 * [Part VIII: Deep Learning models with pre-trained Word2Vec](#PartVIII_link)
 * [Part IX: Deep Learning models with self-trained Word2Vec](#PartIX_link)
+* [Part X: BioBERT model for classification](#PartX_link)
 
 <a id='PartI_link'></a>
 ## Part I: Exploratory data analysis
@@ -170,3 +172,15 @@ Since this project contains some words commonly used in academic literature and 
 
 With self-trained Word2Vec as embedding matrix, 5 different RNN architectures have been tested for this project and the overall training performance is better than machine learning models, but not as good as using pre-trained Word2Vec. All the trained RNN models can achieve accuracy around 0.6 and the RNN1 model can achieve the highest accuracy score around 0.68.
 
+<a id='PartX_link'></a>
+## Part X: BioBERT model for classification
+BioBERT model is initialized with weights from BERT model which was trained on general domain corpora. BioBERT is then pre-trained using PubMed abstracts which is biomedical domain corpora. The pre-trained BioBERT model can effectively capture information in the biomedical domain which is particularly useful for this project considering the biomedical background. Here BioBERT model with pre-trained weights is fine-tuned using the current dataset to perform the classification task.
+
+Three max_len values are used for the fine-tuning process:
+| max_len  | batch_size | step_size |
+| ---------| ---------| ---------|
+| 128  | 32  | 20 |
+| 256  | 16  | 40 |
+| 512  | 8   | 80 |
+
+* Classification result and evaluation:
