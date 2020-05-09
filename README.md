@@ -184,3 +184,4 @@ Three max_len values are used for the fine-tuning process:
 | 512  | 8   | 80 |
 
 * Classification result and evaluation:
+<img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/DP2_confusion_matrix.png' width=500px>
