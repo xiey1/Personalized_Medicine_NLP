@@ -8,21 +8,21 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 
 # Approach:
 ### Text transformation models:
-  CountVectorizer
-  TfidfVectorizer
-  Truncated singular value decomposition (SVD)
-  Word2Vec (self-trained and pre-trained
-  Doc2Vec
+1. CountVectorizer
+2. TfidfVectorizer
+3. Truncated singular value decomposition (SVD)
+4. Word2Vec (self-trained and pre-trained
+5. Doc2Vec
 ### Machine learning models:
-  LogisticRegression
-  RandomForestClassifier
-  XGBClassifier
+1. LogisticRegression
+2. RandomForestClassifier
+3. XGBClassifier
 ### Deep learning models
-  Recurrent neural network (RNN)
-  Long short-term memory (LSTM)
-  Gated Recurrent Units (GRU)
-  Conv1d
-  BioBERT
+1. Recurrent neural network (RNN)
+2. Long short-term memory (LSTM)
+3. Gated Recurrent Units (GRU)
+4. Conv1d
+5. BioBERT
 
 <br>This project has 9 sections with code and detailed explanation in 9 jupyter notebooks.
 
@@ -40,12 +40,12 @@ Multiclass classification of clinical evidence (text) into 9 classes. However, t
 <a id='PartI_link'></a>
 ## Part I: Exploratory data analysis
 ### Short overview of the dataset:
-  Number of documents in training dataset: 3321
-  Number of documents in testing dataset: 5668
+<br>Number of documents in training dataset: 3321
+<br>Number of documents in testing dataset: 5668
   
-  After removing documents with NA in `Text` field:
-  Number of documents in training dataset: 3316
-  Number of documents in testing dataset: 5667
+<br>After removing documents with NA in `Text` field:
+<br>Number of documents in training dataset: 3316
+<br>Number of documents in testing dataset: 5667
 
 * The training dataset is imbalanced and the number of images in each dataset and in each class is shown as below.
 <img src= 'https://github.com/xiey1/Personalized_Medicine_NLP/blob/master/images/class_description.png' width=600px>
